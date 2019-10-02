@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux';
-import {getPlayer} from '../actions/index'
+import { connect } from 'react-redux'
 
 const Player = (props) => {
-  props.getPlayer(parseInt(props.match.params.number, 10));
-  if (!props.player) {
-    return <div>Sorry, but the player was not found</div>
-  }
+
   return (
+    !props.player
+    ?
+    <div>Sorry, but the player was not found</div>
+    :
     <div>
       <h1>{props.player.name} (#{props.player.number})</h1>
       <h2>Position: {props.player.position}</h2>
@@ -17,14 +17,14 @@ const Player = (props) => {
   )
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state, props) => {  
+  var player = Number.parseInt(props.match.params.number);
   return {
-      player: state
+      player: state.players.filter(p=>p.number===player)[0]
   };
 };
 
-const mapDispatchToProps = { 
-  getPlayer
+const mapDispatchToProps = {   
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player)

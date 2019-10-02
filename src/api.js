@@ -11,6 +11,9 @@ const PlayerAPI = {
   get: function(id) {
     const isPlayer = p => p.number === id
     return this.players.find(isPlayer)
+  },
+  add: function(player){
+    this.players.push(player);
   }
 }
 

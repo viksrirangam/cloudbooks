@@ -1,13 +1,17 @@
-export default (state = [], action) => {
+import api from '../api'
+
+const initialState = {
+    players: api.all()
+}
+
+export default (state = initialState, action) => {
     switch (action.type) {
+        case 'ADD_PLAYER':            
+            api.add(action.player);
+            return Object.assign({}, state, {
+                players: api.all()
+              });
         case 'GET_ALL':
-            return Object.assign({}, state, {
-                players: action.players
-            });
-        case 'GET_PLAYER':
-            return Object.assign({}, state, {
-                players: action.player
-            });
         default:
             return state;
     }
