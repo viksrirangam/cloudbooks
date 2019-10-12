@@ -11,7 +11,7 @@ const FullRoster = (props) => {
           props.players.map(p => (
             <li key={p.number}>
               <div className="columns">
-                <div className="column is-one-fifth">
+                <div className="column is-pulled-right">
                   <figure className="image is-32x32">
                     <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" />
                   </figure>
@@ -34,4 +34,7 @@ const mapStateToProps = (state, props) => {
   };
 }
 
-export default connect(mapStateToProps, null)(FullRoster)
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FullRoster)

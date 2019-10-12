@@ -33,7 +33,7 @@ const Player = (props) => {
       Phasellus nec iaculis mauris. <a>@bulmaio</a>.
       <a href="#">#css</a> <Link to='/roster'>Back</Link>
             <br />
-            <h2>Position: {props.player.position}</h2>
+            <h2 className="tag is-info">Position: {props.player.position}</h2>
             <time>11:09 PM - 1 Jan 2016</time>
           </div>
         </div>
