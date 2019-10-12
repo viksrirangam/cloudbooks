@@ -30,7 +30,7 @@ const FullRoster = (props) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    players: state.players
+    players: state.common.players
   };
 }
 

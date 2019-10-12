@@ -6,8 +6,8 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isLoaded:true};
-    this.name = React.createRef();
-    this.position = React.createRef();
+    this.name = React.createRef(); //uncontrolled forms input
+    this.position = React.createRef(); //uncontrolled forms input
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -72,14 +72,14 @@ class Home extends React.Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    completed: state.completed
+    completed: state.newplayer.completed
   };
 }
 
 const mapDispatchToProps = (dispatch, props) => {
   // dispatch(addPlayer({name:"Test", number: 8}));
   return {
-    onClick: (p) => dispatch(addPlayer(p)) // {  }
+    onClick: (p) => dispatch(addPlayer(p))
   };
 }
 

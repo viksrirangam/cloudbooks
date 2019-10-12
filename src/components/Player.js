@@ -44,7 +44,7 @@ const Player = (props) => {
 const mapStateToProps = (state, props) => {
   var player = Number.parseInt(props.match.params.number);
   return {
-    player: state.players.filter(p => p.number === player)[0]
+    player: state.common.players.filter(p => p.number === player)[0]
   };
 };
 

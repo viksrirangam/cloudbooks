@@ -1,7 +1,7 @@
 import api from '../api'
 
 const initialState = {
-    players: api.all()
+    completed: true    
 }
 
 export default (state = initialState, action) => {
@@ -11,7 +11,6 @@ export default (state = initialState, action) => {
             return Object.assign({}, state, {
                 completed: false
               });
-        case 'GET_ALL':
         default:
             return state;
     }
