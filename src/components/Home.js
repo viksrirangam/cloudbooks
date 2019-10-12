@@ -22,7 +22,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Welcome to the Tornadoes Website!</h1>
-        <h2>enroll a player!!</h2>
+        <h2>Enroll a player!!</h2>
 
         {!this.state.isLoaded && this.props.completed && <div className="notification is-success">
           <button className="delete"></button>

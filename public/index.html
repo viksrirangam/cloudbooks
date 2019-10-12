@@ -20,7 +20,7 @@
     work correctly both with client-side routing and a non-root public URL.
     Learn how to configure a non-root public URL by running `npm run build`.
   -->
-  <title>Hello Bulma!</title>
+  <title>Hello Tornadoes!</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
@@ -29,7 +29,7 @@
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        <img src="%PUBLIC_URL%/bulma-logo.png" width="112" height="28">
       </a>
 
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -92,10 +92,21 @@
       <div id="root"></div>
     </div>
   </section>
-  <nav class="navbar is-link is-fixed-bottom" role="navigation">
-    <footer>
-        <h3>some text goes here.</h3>
-    </footer>    
+  <nav class="navbar is-fixed-bottom" role="navigation">
+    <footer style="margin: o auto; border-top: 1px solod #aff; text-align: center; font-size: smaller;">
+      <p>
+        © Copyright 2019 <p class="bd-footer-link bd-has-subtitle">
+          <a href="https://bulma.io/blog">
+            <span class="bd-footer-link-icon has-text-orange">
+              <i class="fa fa-git" aria-hidden="true"></i>
+            </span>
+            <strong>
+              Vikram Srirangam
+            </strong>
+          </a>
+        </p>
+      </p>
+    </footer>
   </nav>
 
   <script>
