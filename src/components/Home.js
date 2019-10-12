@@ -73,7 +73,7 @@ class Home extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    completed: state.newplayer.completed
+    completed: state.asyncnewplayer.completed
   };
 }
 

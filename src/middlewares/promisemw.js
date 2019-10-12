@@ -1,6 +1,5 @@
 const promiseMiddleware = store => next => action => {
     // check if the `payload` property is a promise, and, if so, wait for it to resolve
-    debugger;
     if (action.payload && typeof action.payload.then === 'function') {
       action.payload.then(
         res => { action.payload = res; action.completed = true; next(action); },
