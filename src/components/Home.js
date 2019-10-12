@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { addPlayer } from '../actions/index'
+import { _addPlayer } from '../actions/index'
+import api from '../api';
 
-class Home extends React.Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {isLoaded:true};
@@ -76,10 +77,9 @@ const mapStateToProps = (state, props) => {
   };
 }
 
-const mapDispatchToProps = (dispatch, props) => {
-  // dispatch(addPlayer({name:"Test", number: 8}));
+const mapDispatchToProps = (dispatch, props) => {  
   return {
-    onClick: (p) => dispatch(addPlayer(p))
+    onClick: (p) => { var promise = api.promiseAdd(p); return dispatch(_addPlayer(promise)); }
   };
 }
 

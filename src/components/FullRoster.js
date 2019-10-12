@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -13,7 +13,7 @@ const FullRoster = (props) => {
               <div className="columns">
                 <div className="column is-pulled-right">
                   <figure className="image is-32x32">
-                    <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" />
+                    <img className="is-rounded" alt="player" src="https://bulma.io/images/placeholders/128x128.png" />
                   </figure>
                 </div>
                 <div className="column">
