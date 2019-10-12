@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
         case 'ADD_PLAYER':            
             api.add(action.player);
             return Object.assign({}, state, {
-                players: api.all()
+                completed: false
               });
         case 'GET_ALL':
         default:
