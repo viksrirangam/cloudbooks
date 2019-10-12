@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import {addPlayer} from '../actions/index'
 
 
-const FullRoster = (props) => {  
-    return (
+const FullRoster = (props) => {
+  return (
     <div>
       <ul>
         {
           props.players.map(p => (
             <li key={p.number}>
-              <Link to={`/roster/${p.number}`}>{p.name}</Link>
+              <div className="columns">
+                <div className="column is-one-fifth">
+                  <figure className="image is-32x32">
+                    <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" />
+                  </figure>
+                </div>
+                <div className="column">
+                  <Link to={`/roster/${p.number}`}>{p.name}</Link>
+                </div>
+              </div>
             </li>
           ))
         }
@@ -20,17 +28,10 @@ const FullRoster = (props) => {
   )
 }
 
-const mapStateToProps = (state, props) => {  
-  return {        
+const mapStateToProps = (state, props) => {
+  return {
     players: state.players
   };
 }
 
-const mapDispatchToProps = (dispatch, props) => { 
-  // dispatch(addPlayer({name:"Test", number: 8}));
-  return {
-    onClick: () => dispatch(addPlayer({name:"Test", number: 6, position: "F"}))
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FullRoster)
+export default connect(mapStateToProps, null)(FullRoster)

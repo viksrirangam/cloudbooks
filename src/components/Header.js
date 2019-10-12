@@ -5,13 +5,19 @@ import { Link } from 'react-router-dom'
 // between routes.
 const Header = () => (
   <header>
-    <nav>
+    <div className="tabs is-centered">
       <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/roster'>Roster</Link></li>
-        <li><Link to='/schedule'>Schedule</Link></li>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/roster'>Roster</Link>
+        </li>
+        <li>
+          <Link to='/schedule'>Schedule</Link>
+        </li>
       </ul>
-    </nav>
+    </div>
   </header>
 )
 
