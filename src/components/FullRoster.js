@@ -10,14 +10,19 @@ const FullRoster = (props) => {
         {
           props.players.map(p => (
             <li key={p.number}>
-              <div className="columns">
-                <div className="column is-pulled-right">
-                  <figure className="image is-32x32">
-                    <img className="is-rounded" alt="player" src="https://bulma.io/images/placeholders/128x128.png" />
-                  </figure>
-                </div>
-                <div className="column">
-                  <Link to={`/roster/${p.number}`}>{p.name}</Link>
+              <div className="card">
+                <div className="card-content">
+                  <div className="media">
+                    <div className="media-left">
+                      <figure className="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="player face" />
+                      </figure>
+                    </div>
+                    <div className="media-content">
+                      <p><Link className="subtitle is-6" to={`/roster/${p.number}`}>{p.name}</Link></p>
+                      <p className="subtitle is-6">#{p.number}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
